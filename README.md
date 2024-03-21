@@ -49,15 +49,15 @@ For monitoring the application traces, we'll be using Signoz. Follow the steps b
 
 **SETUP SIGNOZ**
 1. Clone the Signoz repository:
-   ```bash
-   git clone -b main https://github.com/SigNoz/signoz.git
-   ```
+```bash
+  git clone -b main https://github.com/SigNoz/signoz.git
+```
 2. Navigate to the deployment directory:
- ```bash
+```bash
   cd signoz/deploy/
 ```
 3. run
- ```bash
+```bash
   ./install.sh
 ```
 
@@ -67,23 +67,27 @@ For monitoring the application traces, we'll be using Signoz. Follow the steps b
 ```bash
    git clone https://github.com/erikjohnmoreno/weather_app.git
 ```
-2. 
+2. Follow this steps:
 ```bash
-  - cd weather_app
-
-  - bundle install
-
-  - set environment variables on application.yml:
-    openweathermap_api_key: 2f83f95a4d078096a1b777fdb340bccd
-    OTEL_EXPORTER: otlp
-    OTEL_SERVICE_NAME: "weatherApp"
-    OTEL_EXPORTER_OTLP_ENDPOINT: http://localhost:4318
-    OTEL_RESOURCE_ATTRIBUTES: application=weatherApp
-
-  - bundle exec rails s
+  cd weather_app
 ```
+```bash
+  bundle install
+```
+  copy paste application.yml:
+```bash
+  openweathermap_api_key: 2f83f95a4d078096a1b777fdb340bccd
+  OTEL_EXPORTER: otlp
+  OTEL_SERVICE_NAME: "weatherApp"
+  OTEL_EXPORTER_OTLP_ENDPOINT: http://localhost:4318
+  OTEL_RESOURCE_ATTRIBUTES: application=weatherApp
+```
+```bash
+  bundle exec rails s
+```
+
 3. open your web browser and make requests to:
-   ``` http://localhost:3000/weather/:location ```
+   ```http://localhost:3000/weather/:location```
 
 
   
