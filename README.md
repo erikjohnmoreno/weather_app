@@ -43,26 +43,47 @@ Retrieves weather data of the given location.
   }
 
 
-### SETUP
-  for this I use signoz to check for traces
+## SETUP
 
-  **SETUP SIGNOZ** 
-    - git clone -b main https://github.com/SigNoz/signoz.git
-    - cd signoz/deploy/
-    - ./install.sh
+For monitoring the application traces, we'll be using Signoz. Follow the steps below to set up Signoz and the application:
 
-  **SETUP APPLICATION**
-    - git clone :this_repo
-    - cd weather_app
-    - bundle install
-    - set environment variables on application.yml
-      - openweathermap_api_key: 2f83f95a4d078096a1b777fdb340bccd
-      - OTEL_EXPORTER: otlp
-      - OTEL_SERVICE_NAME: "weatherApp"
-      - OTEL_EXPORTER_OTLP_ENDPOINT: http://localhost:4318
-      - OTEL_RESOURCE_ATTRIBUTES: application=weatherApp
-    - bundle exec rails s
-    - open your web browser and make requests to: http://localhost:3000/weather/:location
+**SETUP SIGNOZ**
+1. Clone the Signoz repository:
+   ```bash
+   git clone -b main https://github.com/SigNoz/signoz.git
+   ```
+2. Navigate to the deployment directory:
+ ```bash
+  cd signoz/deploy/
+```
+3. run
+ ```bash
+  ./install.sh
+```
+
+
+**SETUP APPLICATION**
+1. Clone repo
+```bash
+   git clone https://github.com/erikjohnmoreno/weather_app.git
+```
+2. 
+```bash
+  - cd weather_app
+
+  - bundle install
+
+  - set environment variables on application.yml:
+    openweathermap_api_key: 2f83f95a4d078096a1b777fdb340bccd
+    OTEL_EXPORTER: otlp
+    OTEL_SERVICE_NAME: "weatherApp"
+    OTEL_EXPORTER_OTLP_ENDPOINT: http://localhost:4318
+    OTEL_RESOURCE_ATTRIBUTES: application=weatherApp
+
+  - bundle exec rails s
+```
+3. open your web browser and make requests to:
+   ``` http://localhost:3000/weather/:location ```
 
 
   
